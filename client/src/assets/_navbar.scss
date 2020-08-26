@@ -1,0 +1,102 @@
+.nav-container {
+	height: 60px;
+	width: 100%;
+
+	background-color: lightblue;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	.navbar {
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		position: relative;
+
+		h4 {
+			font-size: 26px;
+		}
+
+		.menu {
+			height: 100%;
+			position: absolute;
+
+			right: 20px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			span {
+				background-color: #000000;
+				width: 30px;
+				height: 5px;
+
+				position: relative;
+
+				&::before {
+					content: '';
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					background-color: inherit;
+					top: -10px;
+					left: 0;
+				}
+
+				&::after {
+					content: '';
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					background-color: inherit;
+					top: 10px;
+					left: 0;
+				}
+			}
+
+			.dropdown-menu {
+				position: absolute;
+				width: 150px;
+				background-color: lighten($color: lightgray, $amount: 12%);
+				height: 70px;
+				bottom: -70px;
+				right: 0;
+				padding: 0 10px;
+
+				display: none;
+				ul {
+					height: 100%;
+					width: 100%;
+
+					li {
+						height: 20px;
+						border-bottom: 2px solid gray;
+						padding: 20px 0;
+						cursor: pointer;
+					}
+				}
+
+				&::before {
+					content: '';
+					width: 20px;
+					height: 20px;
+					background-color: inherit;
+					position: absolute;
+					right: 3px;
+					top: -10px;
+					transform: rotate(-45deg);
+				}
+			}
+
+			&:hover .dropdown-menu {
+				display: initial;
+			}
+		}
+	}
+}

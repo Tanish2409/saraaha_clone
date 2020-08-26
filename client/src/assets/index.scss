@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html {
+	width: 100vw;
+	max-width: 425px;
+	height: 100vh;
+	max-height: 800px;
+	margin: auto;
+}
+
+body,
+#root,
+.App {
+	width: 100vw;
+	max-width: 425px;
+	height: 100vh;
+	max-height: 800px;
+
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	list-style-type: none;
+}
+
+.container {
+	width: 80%;
+
+	margin-top: 100px;
+}
+
+@import 'navbar';
+@import 'login';
+@import 'register';
+@import 'alert';
+@import 'message';
+@import 'home';
+@import 'dashboard';
