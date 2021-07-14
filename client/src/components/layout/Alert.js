@@ -9,15 +9,16 @@ const SetAlert = ({ alerts, removeAlert }) => {
 	};
 
 	if (alerts !== null && alerts.length > 0) {
-		return alerts.map((alert) => (
-			<div
-				className={`container alert ${alert.alertType}`}
-				key={alert.id}
-			>
-				<span>{alert.msg}</span>
-				<i className='fas fa-times' onClick={() => onClick(alert.id)} />
+		return (
+			<div className='alert_container'>
+				{alerts.map((alert) => (
+					<div className={`container alert ${alert.alertType}`} key={alert.id}>
+						<span>{alert.msg}</span>
+						<i className='fas fa-times' onClick={() => onClick(alert.id)} />
+					</div>
+				))}
 			</div>
-		));
+		);
 	} else {
 		return null;
 	}

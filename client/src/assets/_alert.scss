@@ -1,3 +1,9 @@
+.alert_container {
+	position: fixed;
+	top: 0;
+	right: 1rem;
+}
+
 .alert {
 	display: flex;
 	justify-content: space-between;
@@ -6,6 +12,21 @@
 	padding: 0 20px;
 	margin: 10px 0;
 	height: 50px;
+	overflow-x: hidden;
+	position: relative;
+
+	color: white;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 4px;
+		left: 0;
+		width: 100%;
+		height: 5px;
+		background-color: white;
+		animation: vanish 5s forwards linear;
+	}
 
 	&.danger {
 		background: #ed5140;
@@ -13,6 +34,17 @@
 
 	&.success {
 		background: #74d47c;
-		color: #08590f;
+		// color: #08590f;
+	}
+
+	i {
+		cursor: pointer;
+		margin-left: 1rem;
+	}
+}
+
+@keyframes vanish {
+	to {
+		width: 0%;
 	}
 }
