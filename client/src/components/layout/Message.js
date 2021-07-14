@@ -11,8 +11,6 @@ const Message = ({ auth }) => {
 				<div className='messages' key={msg._id}>
 					<span>{msg.content}</span>
 					<Moment fromNow>{msg.createdAt}</Moment>
-
-					<span className='divider' />
 				</div>
 			));
 	} else {

@@ -20,8 +20,6 @@ const Dashboard = ({ auth, setAlert }) => {
 
 		var textArea = document.createElement('textarea');
 		textArea.value = e.target.textContent;
-		textArea.focus();
-		textArea.select();
 
 		const shareData = {
 			title: 'Cloak',
@@ -29,19 +27,29 @@ const Dashboard = ({ auth, setAlert }) => {
 			url: e.target.textContent,
 		};
 
+		textArea.style.top = '0';
+		textArea.style.left = '0';
+		textArea.style.position = 'fixed';
+		document.body.appendChild(textArea);
+		textArea.focus();
+		textArea.select();
+
 		try {
-			await navigator.share(shareData);
+			// await navigator.share(shareData);
 			document.execCommand('copy');
-			setAlert('Shared Successfully', 'success');
+			setAlert('Successfully Copied to Clipboard', 'success');
 		} catch (err) {
-			setAlert('Problem in sharing', 'danger');
+			setAlert('Problem in copying', 'danger');
 		}
+
+		document.body.removeChild(textArea);
 	};
 	return (
 		<div className='container dashboard'>
 			<h2>Welcome, {firstName}</h2>
 			<div class='shareLink'>
-				Share this link with your friends to receive secret messages:{' '}
+				Click on the link below to copy it to clipboard and share this link with
+				your friends to receive secret messages:{' '}
 				<span
 					onClick={(e) => onShareClick(e)}
 				>{`${window.location.origin}/send/${userName}`}</span>

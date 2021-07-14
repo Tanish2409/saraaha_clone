@@ -1,16 +1,23 @@
 .messages {
-	font-size: 24px;
-	padding: 20px 0;
+	font-size: 18px;
+	padding: 1rem;
 	width: 100%;
+	border: 1px solid #b7b7b780;
+	border-radius: 8px;
+	box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 
 	display: flex;
 	flex-direction: column;
 
 	word-wrap: break-word;
 
+	&:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+
 	time {
-		font-size: 20px;
-		color: lightgray;
+		font-size: 14px;
+		color: #8e8e8e;
 		margin-top: 10px;
 		margin-bottom: 5px;
 	}
