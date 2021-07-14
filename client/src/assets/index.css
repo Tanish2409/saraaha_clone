@@ -251,42 +251,40 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .send-message h2 {
-  font-size: 26px;
-  text-align: center;
+  font-size: 22px;
 }
 
 .send-message textarea {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  height: 200px;
-  min-width: 80%;
-  width: 80%;
-  max-width: 80%;
-  min-height: 300px;
   margin-top: 20px;
+  height: 200px;
+  min-height: 300px;
+  -webkit-box-shadow: 0px 0px 10px 1px #00000010, 0px 0px 15px 0px #00000008, 0px 0px 20px 3px #00000008;
+          box-shadow: 0px 0px 10px 1px #00000010, 0px 0px 15px 0px #00000008, 0px 0px 20px 3px #00000008;
   background-color: #f4f4f4;
   border: none;
   outline: none;
   padding: 10px;
   word-wrap: break-word;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .send-message button {
-  height: 40px;
   width: 50%;
-  border: none;
   outline: none;
-  background-color: #f4f4f4;
+  border: none;
+  padding: 0.5rem 0;
   border-radius: 20px;
-  margin-top: 20px;
+  margin: 0 auto;
+  background-color: #49b0d3;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
 }
 
 .home-container {

@@ -27,6 +27,10 @@ const SendMessage = (props) => {
 
 		const body = JSON.stringify(message);
 		try {
+			if (message.content.trim() === '') {
+				throw new Error('Message could not be empty');
+			}
+
 			await Axios.put(`/api/message/${userName}`, body, config);
 
 			props.setAlert('Message sent successfully', 'success');
@@ -35,18 +39,26 @@ const SendMessage = (props) => {
 				content: '',
 			});
 		} catch (err) {
-			console.error(err);
-			props.setAlert(
-				'There was a problem in sending message. Pleae try again',
-				'danger'
-			);
+			// console.error(typeof err.message);
+			if (err.message === 'Message could not be empty') {
+				props.setAlert(err.message, 'danger');
+			} else {
+				if (err.response.data.errors[0].msg) {
+					props.setAlert(err.response.data.errors[0].msg, 'danger');
+				} else {
+					props.setAlert(
+						'There was a problem in sending message. Pleae try again',
+						'danger'
+					);
+				}
+			}
 		}
 	};
 	return (
 		<div className='container send-message'>
 			<h2>
-				Send a secret message to {userName}, they will never know who
-				sent it!!!! {';)'}{' '}
+				Send a secret message to {userName}, they will never know who sent
+				it!!!! {';)'}{' '}
 			</h2>
 
 			<textarea
