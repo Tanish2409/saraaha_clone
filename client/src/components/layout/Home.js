@@ -10,15 +10,15 @@ const Home = ({ auth: { isAuthenticated } }) => {
 	}
 	return (
 		<div className='container home-container'>
-			<p>Join up and receive anonymous messages from your friends</p>
-			<div>
-				<button>
-					<Link to='/login'>Login</Link>
-				</button>
-				<button>
-					<Link to='/register'>Register</Link>
-				</button>
-			</div>
+			<img src='/whispering.png' alt='whispering illustration' />
+			<h2>Welcome</h2>
+			<p>
+				Send messages anonymously <br /> to your friends.
+			</p>
+			<p>OR</p>
+			<p>
+				Register and start receiving messages <br /> from your friends.
+			</p>
 		</div>
 	);
 };

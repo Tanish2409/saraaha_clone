@@ -6,6 +6,7 @@ $xs: 400px;
 	padding: 0;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
 }
 
 html,
@@ -27,8 +28,13 @@ li {
 
 .container {
 	width: 100%;
-	max-width: 500px;
+	max-width: 550px;
 	margin: 0 auto;
+	padding: 2rem;
+
+	@media screen and (max-width: $xs) {
+		padding: 1rem;
+	}
 }
 
 @import 'navbar';

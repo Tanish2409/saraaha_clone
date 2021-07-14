@@ -4,6 +4,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
 html,
@@ -25,8 +26,15 @@ li {
 
 .container {
   width: 100%;
-  max-width: 500px;
+  max-width: 550px;
   margin: 0 auto;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    padding: 1rem;
+  }
 }
 
 .nav-container {
@@ -259,21 +267,80 @@ li {
 }
 
 .home-container {
+  width: 100%;
   text-align: center;
 }
 
-.home-container p {
-  font-size: 24px;
+.home-container img {
+  width: 100%;
+  margin-bottom: 1.5rem;
 }
 
-.home-container button {
-  width: 100px;
-  margin-top: 30px;
-  border: none;
-  outline: none;
-  border-radius: 20px;
-  height: 50px;
-  margin-right: 20px;
+.home-container h2 {
+  position: relative;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  -webkit-animation: slide-in 1s;
+          animation: slide-in 1s;
+}
+
+.home-container p {
+  position: relative;
+  opacity: 0;
+  -webkit-animation: fade-in 1.2s 0.25s forwards;
+          animation: fade-in 1.2s 0.25s forwards;
+}
+
+.home-container p:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.home-container p:nth-of-type(2) {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+@-webkit-keyframes slide-in {
+  from {
+    left: 20px;
+    opacity: 0;
+  }
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 20px;
+    opacity: 0;
+  }
+  to {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    top: 20px;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    top: 20px;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
 }
 
 .dashboard h4 {
