@@ -51,7 +51,7 @@ li {
 .nav-container {
   height: 60px;
   width: 100%;
-  background-color: lightblue;
+  background-color: #49b0d3;
   position: fixed;
   top: 0;
   left: 0;
@@ -346,4 +346,3 @@ li {
   cursor: pointer;
   text-decoration: underline;
 }
-/*# sourceMappingURL=index.css.map */

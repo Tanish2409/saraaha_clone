@@ -11,7 +11,7 @@ const Navbar = ({ auth, logout }) => {
 			<nav className='navbar'>
 				<div className='heading'>
 					<h4>
-						<Link to='/'>Cloak</Link>
+						<Link to='/'>Anonymous</Link>
 					</h4>
 				</div>
 				{auth.isAuthenticated ? (
