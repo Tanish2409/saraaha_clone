@@ -1,3 +1,6 @@
+$primary-color: rgb(73, 176, 211);
+$xs: 400px;
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,27 +8,12 @@
 	scroll-behavior: smooth;
 }
 
-html {
-	width: 100vw;
-	max-width: 425px;
-	height: 100vh;
-	max-height: 800px;
-	margin: auto;
-}
-
+html,
 body,
 #root,
 .App {
-	width: 100vw;
-	max-width: 425px;
-	height: 100vh;
-	max-height: 800px;
-
-	position: relative;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 a {
@@ -38,9 +26,9 @@ li {
 }
 
 .container {
-	width: 80%;
-
-	margin-top: 100px;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
 }
 
 @import 'navbar';

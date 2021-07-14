@@ -1,102 +1,60 @@
 .nav-container {
-	height: 60px;
+	height: 100px;
 	width: 100%;
 
-	background-color: rgb(73, 176, 211);
+	background-color: $primary-color;
 
-	position: fixed;
+	position: sticky;
 	top: 0;
 	left: 0;
 
-	.navbar {
-		width: 100%;
-		height: 100%;
+	@media screen and (max-width: $xs) {
+		height: 80px;
+	}
 
+	.nav {
+		height: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-between;
+		padding: 2rem;
 
-		position: relative;
+		@media screen and (max-width: $xs) {
+			padding: 0.5rem;
+		}
+	}
 
-		h4 {
-			font-size: 26px;
+	.brand {
+		display: flex;
+		align-items: center;
+
+		.brand_img {
+			width: 60px;
+			margin-right: 1rem;
+
+			@media screen and (max-width: $xs) {
+				width: 50px;
+				margin-right: 0.5rem;
+			}
 		}
 
-		.menu {
-			height: 100%;
-			position: absolute;
-
-			right: 20px;
-
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			span {
-				background-color: #000000;
-				width: 30px;
-				height: 5px;
-
-				position: relative;
-
-				&::before {
-					content: '';
-					width: 100%;
-					height: 100%;
-					position: absolute;
-					background-color: inherit;
-					top: -10px;
-					left: 0;
-				}
-
-				&::after {
-					content: '';
-					width: 100%;
-					height: 100%;
-					position: absolute;
-					background-color: inherit;
-					top: 10px;
-					left: 0;
-				}
-			}
-
-			.dropdown-menu {
-				position: absolute;
-				width: 150px;
-				background-color: lighten($color: lightgray, $amount: 12%);
-				height: 70px;
-				bottom: -70px;
-				right: 0;
-				padding: 0 10px;
-
-				display: none;
-				ul {
-					height: 100%;
-					width: 100%;
-
-					li {
-						height: 20px;
-						border-bottom: 2px solid gray;
-						padding: 20px 0;
-						cursor: pointer;
-					}
-				}
-
-				&::before {
-					content: '';
-					width: 20px;
-					height: 20px;
-					background-color: inherit;
-					position: absolute;
-					right: 3px;
-					top: -10px;
-					transform: rotate(-45deg);
-				}
-			}
-
-			&:hover .dropdown-menu {
-				display: initial;
-			}
+		.brand_name {
+			text-transform: uppercase;
+			color: white;
+			letter-spacing: 0.1rem;
+			font-size: clamp(14px, 2.5vw, 26px);
 		}
+	}
+
+	.nav_btn {
+		padding: 0.5rem 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.1rem;
+		background-color: white;
+		border: none;
+		outline: none;
+		color: $primary-color;
+		cursor: pointer;
+		border-radius: 8px;
 	}
 }

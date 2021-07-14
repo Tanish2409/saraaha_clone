@@ -7,25 +7,35 @@ import { logout } from '../../redux/actions/auth';
 
 const Navbar = ({ auth, logout }) => {
 	return (
-		<div className='nav-container'>
-			<nav className='navbar'>
-				<div className='heading'>
-					<h4>
-						<Link to='/'>Anonymous</Link>
-					</h4>
+		<nav className='nav-container'>
+			<div className='container nav'>
+				<div className='brand'>
+					<img src='/anonymous_logo.png' alt='logo' className='brand_img' />
+					<Link to='/'>
+						<h1 className='brand_name'>Anonymous</h1>
+					</Link>
 				</div>
-				{auth.isAuthenticated ? (
-					<div className='menu'>
-						<span></span>
-						<div className='dropdown-menu'>
-							<ul>
-								<li onClick={(e) => logout(e)}>Logout</li>
-							</ul>
-						</div>
-					</div>
-				) : null}
-			</nav>
-		</div>
+
+				<div className='nav_btn_container'>
+					{auth.isAuthenticated ? (
+						<button onClick={(e) => logout(e)} className='nav_btn'>
+							Logout
+						</button>
+					) : (
+						<>
+							<Link to='/login'>
+								<button className='nav_btn' style={{ marginRight: '1rem' }}>
+									Login
+								</button>
+							</Link>
+							<Link to='/register'>
+								<button className='nav_btn'>Register</button>
+							</Link>
+						</>
+					)}
+				</div>
+			</div>
+		</nav>
 	);
 };
 
