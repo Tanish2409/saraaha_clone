@@ -114,7 +114,6 @@ li {
 }
 
 .auth-container {
-  height: 100%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -129,6 +128,9 @@ li {
 }
 
 .auth-container h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #393939;
   margin-bottom: 30px;
 }
 
@@ -152,13 +154,25 @@ li {
   outline: none;
   height: 50px;
   padding: 0 20px;
-  margin-bottom: 20px;
   background-color: #f4f4f4;
   border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 10px 1px #00000010, 0px 0px 15px 0px #00000008, 0px 0px 20px 3px #00000008;
+          box-shadow: 0px 0px 10px 1px #00000010, 0px 0px 15px 0px #00000008, 0px 0px 20px 3px #00000008;
+}
+
+.auth-container form input:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .auth-container form input[type='submit'] {
   width: 50%;
+  background-color: #49b0d3;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.75rem;
 }
 
 .auth-container a {
